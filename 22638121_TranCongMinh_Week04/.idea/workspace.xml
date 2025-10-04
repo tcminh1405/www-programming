@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8644d2b9-c282-428e-bc5f-d7d3774f762d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/22638121_TranCongMinh_Bai4_UI.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/beans/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/beans/CartBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/beans/CartItemBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/dao/BookDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/servlet/BookServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/servlet/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/java/iuh/fit/se/trancongminh_bai04_iuhbookstore/util/DBUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/chitietsach.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/danhsach.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/giohang.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/bianmotcaiten.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/billybeth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/compho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/header-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/ketronsach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/nhatkymacarong3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/images/sotayvietvan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22638121_TranCongMinh_Bai04_IUHBookStore/src/main/webapp/thanhtoan.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/beans/CartBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/beans/CartItemBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/beans/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/dao/ProductDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/servlet/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/servlet/ProductServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/java/iuh/fit/se/bai03_shoppingcart/util/DBUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/cart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/images/ip16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/images/ip17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/images/samsung.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/images/sony.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/product-detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai03_ShoppingCart/src/main/webapp/product-list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Doc/Baitap WWW JAVA_JakartaEE11.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Doc/Baitap WWW JAVA_JakartaEE11.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "tcminh1405"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/tcminh1405/www-programming.git",
+    "accountId": "8d2ece0c-6bec-43c2-8f81-ac11e8cf67fc"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="33JqWamBhRKKjpTyxMBtJuDFkIl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/TH WWW/22638121_TranCongMinh_Week04",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8644d2b9-c282-428e-bc5f-d7d3774f762d" name="Changes" comment="" />
+      <created>1759045554607</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759045554607</updated>
+      <workItem from="1759045555781" duration="33000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
