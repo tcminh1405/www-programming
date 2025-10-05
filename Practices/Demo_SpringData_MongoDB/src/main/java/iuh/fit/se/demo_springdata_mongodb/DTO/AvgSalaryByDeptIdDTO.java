@@ -3,8 +3,8 @@ package iuh.fit.se.demo_springdata_mongodb.DTO;
 import lombok.Data;
 
 @Data
-public class AvgAgeByStatusDTO {
-    private Integer status;
+public class AvgSalaryByDeptIdDTO {
+    private String deptId;
     private Long count;
-    private Double avgAge;
+    private Double avgSalary;
 }
