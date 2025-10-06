@@ -51,4 +51,9 @@ public class DepartmentController {
     public void delete(@PathVariable Long id) {
         departmentService.delete(id);
     }
+    // GET /departments/by-employee-count/{count}
+    @GetMapping("/by-employee-count/{count}")
+    public List<Department> getDepartmentsByEmployeeCount(@PathVariable int count) {
+        return departmentService.getDepartmentsByEmployeeCount(count);
+    }
 }

@@ -37,4 +37,9 @@ public class DepartmentService {
     public List<Department> getAllWithEmployees() {
         return departmentRepository.findAllWithEmployees();
     }
+
+    // Lấy phòng ban có số lượng nhân viên bằng count
+    public List<Department> getDepartmentsByEmployeeCount(int count) {
+        return departmentRepository.findByEmployeeCount(count);
+    }
 }
