@@ -10,13 +10,15 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "department") // bỏ department khỏi toString
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private double salary;
+   // @Column(nullable = false)
+    private Double salary;
     private LocalDate dob;
 
     @ManyToOne
