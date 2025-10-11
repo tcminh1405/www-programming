@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chi tiết nhân viên</title>
+</head>
+<body>
+<h2>Chi tiết nhân viên</h2>
+<p>ID: <span th:text="${employee.id}"></span></p>
+<p>Tên: <span th:text="${employee.name}"></span></p>
+<p>Lương: <span th:text="${employee.salary}"></span></p>
+<p>Ngày sinh: <span th:text="${employee.dob}"></span></p>
+<p>Phòng ban: <span th:text="${employee.department.name}"></span></p>
+<a th:href="@{/web/employees}">Quay lại danh sách</a>
+</body>
+</html>

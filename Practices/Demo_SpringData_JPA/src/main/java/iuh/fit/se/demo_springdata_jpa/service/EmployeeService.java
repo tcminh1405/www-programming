@@ -33,18 +33,24 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    // Tìm kiếm theo tên
-    public List<Employee> findByName(String name) {
+    // Tìm kiếm theo tên chứa từ khóa (không phân biệt hoa thường)
+    public List<Employee> findByNameContainingIgnoreCase(String name) {
         return employeeRepository.findByNameContainingIgnoreCase(name);
     }
 
-    // Tìm theo tuổi (dùng query đã định nghĩa)
-    public List<Employee> findByAge(int age) {
-        return employeeRepository.findByAge(age);
+    // Tìm theo tuổi >= ? (dùng query đã định nghĩa)
+    public List<Employee> findByAgeGreaterThan(int age) {
+        return employeeRepository.findByAgeGreaterThan(age);
     }
 
-    // Tìm theo khoảng lương
-    public List<Employee> findBySalaryRange(double min, double max) {
-        return employeeRepository.findBySalaryBetween(min, max);
+    // Tìm theo lương >= ?
+    public List<Employee> findBySalaryGreaterThan(double minSalary) {
+        return employeeRepository.findBySalaryGreaterThan(minSalary);
     }
+
+    public List<Employee> findByDepartmentName(String deptName) {
+        return employeeRepository.findByDepartmentName(deptName);
+    }
+
+
 }

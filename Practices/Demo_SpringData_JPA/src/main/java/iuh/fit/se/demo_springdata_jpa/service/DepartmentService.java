@@ -33,13 +33,14 @@ public class DepartmentService {
         departmentRepository.deleteById(id);
     }
 
-    // Lấy tất cả phòng ban kèm danh sách nhân viên
-    public List<Department> getAllWithEmployees() {
-        return departmentRepository.findAllWithEmployees();
+    // Tìm phòng ban theo tên
+    public List<Department> findByName(String name) {
+        return departmentRepository.findByNameContainingIgnoreCase(name);
     }
 
-    // Lấy phòng ban có số lượng nhân viên bằng count
-    public List<Department> getDepartmentsByEmployeeCount(int count) {
+    // Tìm phòng ban có số lượng nhân viên >= count
+    public List<Department> findByEmployeeCount(int count) {
         return departmentRepository.findByEmployeeCount(count);
     }
+
 }
