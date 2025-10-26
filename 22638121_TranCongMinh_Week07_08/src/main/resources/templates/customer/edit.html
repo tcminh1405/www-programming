@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa khách hàng</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a7;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            background: white;
+            margin: 0 auto;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #2a7;
+            outline: none;
+        }
+
+        button {
+            background-color: #2a7;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #248f5d;
+        }
+
+        a {
+            margin-left: 15px;
+            color: #2a7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1c5;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sửa thông tin khách hàng</h1>
+
+<form th:action="@{'/customer/edit/' + ${customer.id}}" th:object="${customer}" method="post">
+    <label>Tên khách hàng:</label>
+    <input type="text" th:field="*{name}" required>
+
+    <label>Ngày đăng ký:</label>
+    <input type="date"
+           th:value="${#temporals.format(customer.customerSince, 'yyyy-MM-dd')}"
+           name="customerSince" required>
+
+
+    <button type="submit">Cập nhật</button>
+    <a th:href="@{/customer}">Hủy</a>
+</form>
+
+</body>
+</html>

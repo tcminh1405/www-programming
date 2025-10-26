@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa đơn hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2a7;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .actions {
+            margin-bottom: 20px;
+        }
+
+        .actions a {
+            background-color: #2a7;
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        .actions a:hover {
+            background-color: #238a5f;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Đảm bảo mỗi cặp label/input/select nằm gọn gàng */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="date"],
+        form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus,
+        form select:focus {
+            border-color: #2a7;
+            outline: none;
+        }
+
+        /* Ẩn thẻ <br> không cần thiết */
+        form br {
+            display: none;
+        }
+
+        /* Định dạng cho input Mã đơn (chỉ đọc) */
+        form input[readonly] {
+            background-color: #eee;
+            cursor: default;
+        }
+
+        /* Nhóm nút bấm */
+        form button,
+        form a.button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        /* Nút Cập nhật (Primary) */
+        form button[type="submit"] {
+            background-color: #2a7;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #259;
+        }
+
+        /* Link Quay lại */
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p a {
+            color: #2a7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+            color: #259;
+        }
+    </style>
+</head>
+<body>
+<h1>Sửa đơn hàng</h1>
+
+<form th:action="@{'/order/edit/' + ${order.id}}" method="post" th:object="${order}">
+
+    <label>Mã đơn:</label>
+    <input type="text" th:value="${order.id}" readonly>
+
+    <label>Ngày đặt:</label>
+    <input type="date" th:field="*{date}" required>
+
+    <label>Khách hàng:</label>
+    <select th:field="*{customer.id}">
+        <option th:each="c : ${customers}"
+                th:value="${c.id}"
+                th:text="${c.name}"
+                th:selected="${c.id == order.customer.id}">
+        </option>
+    </select>
+
+    <button type="submit">Cập nhật</button>
+</form>
+
+<p><a th:href="@{/order}">← Quay lại</a></p>
+</body>
+</html>

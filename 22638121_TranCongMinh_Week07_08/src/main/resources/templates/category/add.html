@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm loại sản phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+        .form-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 30px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2a7; text-align: center; }
+        label { font-weight: bold; display: block; margin-bottom: 8px; }
+        input[type="text"] {
+            width: 100%; padding: 8px;
+            border: 1px solid #ccc; border-radius: 6px;
+            margin-bottom: 16px;
+        }
+        button {
+            width: 100%; background-color: #2a7; color: white;
+            border: none; padding: 10px; border-radius: 6px;
+            font-size: 16px; cursor: pointer;
+        }
+        button:hover { background-color: #238a5f; }
+        a { display: inline-block; margin-top: 10px; text-align: center; width: 100%; text-decoration: none; color: #2a7; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Thêm loại sản phẩm mới</h2>
+    <form th:action="@{/category/add}" th:object="${category}" method="post">
+        <label for="name">Tên loại sản phẩm:</label>
+        <input type="text" id="name" th:field="*{name}" placeholder="Ví dụ: Laptop, Điện thoại..." required>
+        <button type="submit">Thêm mới</button>
+    </form>
+
+    <a th:href="@{/category}">← Quay lại danh sách</a>
+</div>
+
+</body>
+</html>
