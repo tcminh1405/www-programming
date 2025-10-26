@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm đơn hàng mới</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f8f9fa;
+        }
+        h1 { color: #2a7; }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            padding: 6px;
+            width: 250px;
+            margin: 5px 0 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: darkslategray;
+            color: white;
+        }
+        button {
+            background-color: #2a7;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #238a5f;
+        }
+        .remove-btn {
+            background-color: crimson;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+<h1>Thêm đơn hàng mới</h1>
+
+<form th:action="@{/order/add}" th:object="${order}" method="post">
+    <label>Khách hàng:</label><br>
+    <select th:field="*{customer.id}">
+        <option th:each="c : ${customers}" th:value="${c.id}" th:text="${c.name}"></option>
+    </select><br>
+
+    <label>Ngày đặt hàng:</label><br>
+    <input type="date" th:field="*{date}" required><br>
+
+    <h3>Danh sách sản phẩm</h3>
+    <table id="productTable">
+        <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá (VNĐ)</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody id="productBody">
+        <tr>
+            <td>
+                <select name="orderLines[0].product.id" required>
+                    <option th:each="p : ${products}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </td>
+            <td><input type="number" name="orderLines[0].amount" min="1" required></td>
+            <td><input type="number" name="orderLines[0].purchasePrice" min="0" required></td>
+            <td><button type="button" class="remove-btn" onclick="removeRow(this)">Xóa</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="addRow()">+ Thêm sản phẩm</button>
+    <br><br>
+    <button type="submit">Lưu đơn hàng</button>
+    <a th:href="@{/order}">Hủy</a>
+</form>
+
+<script>
+    let index = 1;
+
+    function addRow() {
+        const body = document.getElementById('productBody');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <select name="orderLines[${index}].product.id" required>
+                    <option th:each="p : ${products}" th:value="\${p.id}" th:text="\${p.name}"></option>
+                </select>
+            </td>
+            <td><input type="number" name="orderLines[${index}].amount" min="1" required></td>
+            <td><input type="number" name="orderLines[${index}].purchasePrice" min="0" required></td>
+            <td><button type="button" class="remove-btn" onclick="removeRow(this)">Xóa</button></td>
+        `;
+        body.appendChild(row);
+        index++;
+    }
+
+    function removeRow(btn) {
+        btn.closest('tr').remove();
+    }
+</script>
+
+</body>
+</html>

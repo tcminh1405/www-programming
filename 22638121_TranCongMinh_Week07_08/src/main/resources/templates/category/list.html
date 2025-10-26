@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách danh mục</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      color: #2a7;
+      margin-bottom: 15px;
+    }
+
+    .actions {
+      margin-bottom: 20px;
+    }
+
+    .actions a {
+      background-color: #2a7;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+
+    .actions a:hover {
+      background-color: #238a5f;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      color: white;
+      background-color: darkslategray;
+    }
+
+    a.link {
+      text-decoration: none;
+      color: #2a7;
+      font-weight: bold;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    .btn-delete {
+      color: red;
+    }
+
+    .btn-edit {
+      color: #007bff;
+    }
+
+    .btn-view {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Danh sách danh mục</h1>
+
+<div class="actions">
+  <a th:href="@{/category/add}">Thêm danh mục mới</a>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Tên danh mục</th>
+    <th>Thao tác</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="category : ${categories}">
+    <td th:text="${category.id}"></td>
+    <td>
+      <a th:href="@{'/category/' + ${category.id}}"
+         th:text="${category.name}"
+         class="btn-view"></a>
+    </td>
+    <td>
+      <a th:href="@{'/category/' + ${category.id}}" class="btn-view">Xem</a> |
+      <a th:href="@{'/category/edit/' + ${category.id}}" class="btn-edit">Sửa</a> |
+      <a th:href="@{'/category/delete/' + ${category.id}}"
+         class="btn-delete"
+         onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');">Xóa</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<p><a th:href="@{/home}">← Quay lại trang chủ </a></p>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ - MiniShop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #2a7;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-links {
+            font-size: 15px;
+        }
+
+        .auth-links strong {
+            color: #ffd700;
+        }
+
+        main {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        main img {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+        }
+
+        main h2 {
+            color: #2a7;
+            font-size: 26px;
+        }
+
+        ol {
+            display: inline-block;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        ol a {
+            color: #2a7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        ol a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2a7;
+            color: white;
+            padding: 10px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+
+    <h1>MiniShop</h1>
+
+    <nav>
+        <a th:href="@{/product}">Sản phẩm</a>
+        <a th:href="@{/category}">Danh mục</a>
+        <a th:href="@{/order}">Đơn hàng</a>
+        <a th:href="@{/customer}">Khách hàng</a>
+    </nav>
+
+    <div sec:authorize="isAuthenticated()">
+        👤 Xin chào, <strong th:text="${username}"></strong> |
+
+        <form th:action="@{/logout}" method="post" style="display: inline; margin: 0; padding: 0;">
+            <button type="submit"
+                    style="background:none; border:none; color:#0000EE; text-decoration:underline; cursor:pointer; font-size: inherit; padding: 0;">
+                Đăng xuất
+            </button>
+        </form>
+    </div>
+</header>
+
+<main>
+    <h2>Chào mừng đến với MiniShop!</h2>
+
+    <img th:src="@{/images/shopping.png}" alt="Shopping Logo"/>
+
+    <p>Vui lòng chọn một mục bên dưới để bắt đầu duyệt cửa hàng.</p>
+
+    <ol>
+        <li><a th:href="@{/product}">Danh sách sản phẩm</a></li>
+        <li><a th:href="@{/category}">Danh sách danh mục</a></li>
+        <li><a th:href="@{/order}">Danh sách đơn hàng</a></li>
+        <li><a th:href="@{/customer}">Danh sách khách hàng</a></li>
+    </ol>
+</main>
+
+<footer>
+     22638121 - Trần Công Minh
+</footer>
+
+</body>
+</html>

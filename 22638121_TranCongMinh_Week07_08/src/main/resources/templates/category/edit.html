@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa danh mục - MiniShop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Đảm bảo main chiếm không gian còn lại */
+        main {
+            padding: 40px 20px;
+            flex-grow: 1; /* Quan trọng */
+        }
+
+        main h1 { /* Đổi từ h2 sang h1 cho trang này */
+            color: #2a7;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2a7;
+            color: white;
+            padding: 10px 0;
+            margin-top: auto; /* Đẩy footer xuống dưới */
+            font-size: 14px;
+        }
+
+        /* === 🎨 CSS MỚI CHO FORM 🎨 === */
+        form {
+            max-width: 600px;
+            margin: 0 auto; /* Căn giữa form */
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        form label {
+            display: block; /* Cho label nằm trên input */
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+            margin-bottom: 20px;
+        }
+
+        form button {
+            background-color: #2a7; /* Màu xanh chủ đạo */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #259; /* Màu xanh đậm hơn khi hover */
+        }
+
+        /* Link quay lại */
+        p.back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p.back-link a {
+            color: #2a7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        p.back-link a:hover {
+            text-decoration: underline;
+        }
+        /* === KẾT THÚC CSS MỚI === */
+
+    </style>
+</head>
+<body>
+<main>
+    <h1>Sửa danh mục</h1>
+
+    <form th:action="@{'/category/edit/' + ${category.id}}" th:object="${category}" method="post">
+        <div>
+            <label for="name">Tên danh mục:</label>
+            <input type="text" id="name" th:field="*{name}" required>
+        </div>
+        <div>
+            <button type="submit">Cập nhật</button>
+        </div>
+    </form>
+
+    <p class="back-link"><a th:href="@{/category}">← Quay lại danh sách</a></p>
+</main>
+
+<footer>
+    22638121 - Trần Công Minh
+</footer>
+
+</body>
+</html>

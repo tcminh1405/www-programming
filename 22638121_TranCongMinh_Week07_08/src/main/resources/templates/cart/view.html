@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <style>
+    body { font-family: Arial; margin: 30px; }
+    h1 { color: #2a7; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: darkslategray; color: white; }
+    .btn { background: #2a7; color: white; padding: 6px 12px; border-radius: 6px; text-decoration: none; }
+    .btn:hover { background: #238a5f; }
+    .total { font-weight: bold; text-align: right; }
+  </style>
+</head>
+<body>
+
+<h1>Giỏ hàng của bạn</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Sản phẩm</th>
+    <th>Giá</th>
+    <th>Số lượng</th>
+    <th>Tổng</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${cart.items}">
+    <td th:text="${item.product.name}"></td>
+    <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+    <td th:text="${item.quantity}"></td>
+    <td th:text="${#numbers.formatDecimal(item.total, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+    <td><a th:href="@{'/cart/remove/' + ${item.product.id}}" class="btn">Xóa</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<p class="total">Tổng cộng: <span th:text="${#numbers.formatDecimal(cart.total, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></span></p>
+
+<form th:action="@{/cart/checkout}" method="post">
+  <button type="submit" class="btn">Đặt hàng</button>
+</form>
+
+<p><a class="btn" th:href="@{/product}">← Tiếp tục mua sắm</a></p>
+
+</body>
+</html>

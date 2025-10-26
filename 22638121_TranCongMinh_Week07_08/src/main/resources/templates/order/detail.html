@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết đơn hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h1 {
+            color: #2a7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: darkslategray;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .info {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #2a7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Chi tiết đơn hàng</h1>
+
+<div class="info">
+    <p><strong>Mã đơn hàng:</strong> <span th:text="${order.id}"></span></p>
+    <p><strong>Ngày đặt:</strong> <span th:text="${order.date}"></span></p>
+    <p><strong>Khách hàng:</strong> <span th:text="${order.customer.name}"></span></p>
+</div>
+
+<h3>Danh sách sản phẩm</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá (VNĐ)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="line : ${lines}">
+        <td th:text="${line.product.name}"></td>
+        <td th:text="${line.amount}"></td>
+        <td th:text="${#numbers.formatDecimal(line.purchasePrice, 0, 'COMMA', 0, 'POINT')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/order}">← Quay lại danh sách đơn hàng</a>
+
+</body>
+</html>

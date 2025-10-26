@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm khách hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8; /* Nền nhẹ nhàng */
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa nội dung */
+        }
+
+        h1 {
+            color: #2a7; /* Màu xanh chủ đạo */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Tạo chiều sâu nhẹ */
+        }
+
+        /* Định dạng cho label và input */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="date"]:focus {
+            border-color: #2a7; /* Highlight khi focus */
+            outline: none;
+        }
+
+        /* Cải thiện khoảng cách giữa các cặp label/input */
+        form br {
+            display: none; /* Bỏ các thẻ <br> thừa trong form HTML */
+        }
+
+        /* Nhóm nút bấm */
+        form button,
+        form a {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px; /* Khoảng cách giữa các nút */
+        }
+
+        /* Nút Lưu (Primary Button) */
+        form button[type="submit"] {
+            background-color: #2a7;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #259;
+        }
+
+        /* Nút Hủy (Secondary/Link Button) */
+        form a {
+            background-color: #ccc;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        form a:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+<h1>Thêm khách hàng mới</h1>
+<form th:action="@{/customer/add}" th:object="${customer}" method="post">
+    <label>Tên khách hàng:</label>
+    <input type="text" th:field="*{name}" required>
+
+    <label>Ngày đăng ký:</label>
+    <input type="date"
+           th:value="${#temporals.format(customer.customerSince, 'yyyy-MM-dd')}"
+           name="customerSince" required>
+
+    <button type="submit">Lưu</button>
+    <a th:href="@{/customer}">Hủy</a>
+</form>
+</body>
+</html>
