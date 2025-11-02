@@ -45,13 +45,40 @@
         .actions a:hover {
             background-color: #238a5f;
         }
+        .btn-delete {
+            color: red;
+        }
+
+        .btn-edit {
+            color: #007bff;
+        }
+
+        .btn-view {
+            color: green;
+        }
     </style>
 </head>
 <body>
 <h1>Danh sách đơn hàng</h1>
+
 <div class="actions">
-<!--    <a th:href="@{/order/add}">+ Thêm đơn hàng mới</a>-->
-</div>/
+    <a th:href="@{/cart/add}">+ Thêm đơn hàng mới</a>
+
+    <a th:href="@{/cart}">+ Thêm đơn hàng mới</a>
+
+</div>
+
+<!--<div class="actions">-->
+<!--    &lt;!&ndash; Nếu là admin thì thêm đơn hàng thủ công &ndash;&gt;-->
+<!--    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}"-->
+<!--       th:href="@{/order/add}">+ Thêm đơn hàng mới</a>-->
+
+<!--    &lt;!&ndash; Nếu là customer thì dẫn đến giỏ hàng &ndash;&gt;-->
+<!--    <a th:if="${#authorization.expression('hasRole(''CUSTOMER'')')}"-->
+<!--       th:href="@{/cart}">🛒 Tạo đơn hàng từ giỏ hàng</a>-->
+<!--</div>-->
+
+
 <table>
     <thead>
     <tr>
@@ -67,9 +94,9 @@
         <td th:text="${order.date}"></td>
         <td th:text="${order.customer.name}"></td>
         <td>
-            <a th:href="@{'/order/detail/' + ${order.id}}">Xem</a> |
-            <a th:href="@{'/order/edit/' + ${order.id}}">Sửa</a> |
-            <a th:href="@{'/order/delete/' + ${order.id}}"
+            <a th:href="@{'/order/detail/' + ${order.id}}" class="btn-view">Xem</a> |
+            <a th:href="@{'/order/edit/' + ${order.id}} " class="btn-edit">Sửa</a> |
+            <a th:href="@{'/order/delete/' + ${order.id}}" class="btn-delete"
                onclick="return confirm('Bạn có chắc muốn xóa đơn hàng này không?');">Xóa</a>
         </td>
     </tr>

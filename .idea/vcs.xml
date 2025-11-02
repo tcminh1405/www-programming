@@ -3,5 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/22638121_TranCongMinh_Week04/TranCongMinh_Bai04_IUHBookStore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/22638121_TranCongMinh_Week06" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Practices/Demo_SpringData_JDBC" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Practices/Demo_SpringData_JPA" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Practices/Demo_SpringData_MongoDB" vcs="Git" />
   </component>
 </project>

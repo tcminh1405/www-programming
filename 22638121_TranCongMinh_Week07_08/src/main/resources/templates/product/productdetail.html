@@ -4,16 +4,151 @@
   <meta charset="UTF-8">
   <title>Chi tiết sản phẩm</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1 { color: #2a7; }
-    .comment { border-left: 3px solid #2a7; margin-bottom: 8px; padding-left: 10px; font-style: italic; }
-    .comment a {  font-size: 12px; margin-left: 10px; text-decoration: none; }
-    .comment a.edit { color: #007bff; }
-    .comment a.delete { color: red; }
-    form { margin-top: 20px; }
-    textarea { width: 100%; height: 60px; padding: 5px; font-family: inherit; }
-    button { background-color: #2a7; color: white; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; }
-    button:hover { background-color: #238a5f; }
+    /*body { font-family: Arial, sans-serif; margin: 20px; }*/
+    /*h1 { color: #2a7; }*/
+    /*.comment { border-left: 3px solid #2a7; margin-bottom: 8px; padding-left: 10px; font-style: italic; }*/
+    /*.comment a {  font-size: 12px; margin-left: 10px; text-decoration: none; }*/
+    /*.comment a.edit { color: #007bff; }*/
+    /*.comment a.delete { color: red; }*/
+    /*form { margin-top: 20px; }*/
+    /*textarea { width: 100%; height: 60px; padding: 5px; font-family: inherit; }*/
+    /*button { background-color: #2a7; color: white; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; }*/
+    /*button:hover { background-color: #238a5f; }*/
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 40px;
+      background-color: #f2f6f5;
+      color: #333;
+    }
+
+    h1 {
+      color: #2a7;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    strong {
+      color: #222;
+    }
+
+    .comments {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 25px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 25px;
+    }
+
+    .comments h3 {
+      color: #2a7;
+      margin-bottom: 15px;
+    }
+
+    .comment {
+      background: #f9f9f9;
+      border-left: 4px solid #2a7;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .comment span {
+      flex: 1;
+      padding-left: 12px;
+      color: #444;
+      font-style: normal;
+    }
+
+    .comment a {
+      font-size: 13px;
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .comment a.edit {
+      color: #007bff;
+    }
+
+    .comment a.edit:hover {
+      color: #0056b3;
+    }
+
+    .comment a.delete {
+      color: #e63946;
+    }
+
+    .comment a.delete:hover {
+      color: #c70000;
+    }
+
+    form {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      margin-top: 25px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+      color: #2a7;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px 12px;
+      font-family: inherit;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-size: 15px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #2a7;
+      box-shadow: 0 0 4px rgba(42, 170, 119, 0.3);
+      outline: none;
+    }
+
+    button {
+      margin-top: 12px;
+      background-color: #2a7;
+      color: white;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #238a5f;
+      transform: translateY(-2px);
+    }
+
+    a {
+      color: #2a7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
   </style>
 </head>
@@ -25,6 +160,11 @@
 <p><strong>Giá:</strong>
   <span th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></span>
 </p>
+<form th:action="@{'/cart/add/' + ${product.id}}" method="post" style="margin-top: 15px;">
+  <button type="submit">Thêm vào giỏ hàng</button>
+</form>
+
+
 
 <div class="comments">
   <h3>Bình luận:</h3>

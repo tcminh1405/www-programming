@@ -45,7 +45,7 @@ public class SercurityConfig {
                         .requestMatchers("/login", "/css/**", "/js/**", "/images/**", "/test").permitAll()
 
                         // Trang sản phẩm: CUSTOMER và ADMIN đều xem được
-                        .requestMatchers("/product", "/product/detail/**").hasAnyRole("CUSTOMER", "ADMIN")
+                        .requestMatchers("/product", "/product/detail/**", "/cart/**").hasAnyRole("CUSTOMER", "ADMIN")
 
                         // Chỉ ADMIN mới được thêm/sửa/xóa sản phẩm
                         .requestMatchers("/product/add", "/product/edit/**", "/product/update/**", "/product/delete/**").hasRole("ADMIN")
@@ -55,6 +55,9 @@ public class SercurityConfig {
 
                         // CUSTOMER vẫn có thể xem và tạo đơn hàng của riêng họ
                         .requestMatchers("/order/add", "/cart/**", "/order/checkout").hasRole("CUSTOMER")
+
+                        // CUSTOMER kh xóa sửa comment
+                        .requestMatchers("/comment/edit/**", "/comment/delete/**").hasRole("ADMIN")
 
                         // Các request khác cần đăng nhập
                         .anyRequest().authenticated()

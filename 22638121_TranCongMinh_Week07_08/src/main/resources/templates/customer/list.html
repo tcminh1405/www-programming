@@ -27,6 +27,18 @@
         .actions a:hover {
             background-color: #238a5f;
         }
+
+        .btn-delete {
+            color: red;
+        }
+
+        .btn-edit {
+            color: #007bff;
+        }
+
+        .btn-view {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -51,9 +63,9 @@
         <td th:text="${c.name}"></td>
         <td th:text="${c.customerSince}"></td>
         <td>
-            <a th:href="@{'/customer/' + ${c.id}}">Xem</a> |
-            <a th:href="@{'/customer/edit/' + ${c.id}}">Sửa</a> |
-            <a th:href="@{'/customer/delete/' + ${c.id}}"
+            <a th:href="@{'/customer/' + ${c.id}}" class="btn-view" >Xem</a> |
+            <a th:href="@{'/customer/edit/' + ${c.id}}" class="btn-edit">Sửa</a> |
+            <a th:href="@{'/customer/delete/' + ${c.id}}" class="btn-delete"
                onclick="return confirm('Xóa khách hàng này?');">Xóa</a>
         </td>
     </tr>

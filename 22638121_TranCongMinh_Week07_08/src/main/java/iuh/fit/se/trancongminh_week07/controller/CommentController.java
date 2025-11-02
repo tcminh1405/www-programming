@@ -5,6 +5,7 @@ import iuh.fit.se.trancongminh_week07.entities.Comment;
 import iuh.fit.se.trancongminh_week07.services.CommentService;
 import iuh.fit.se.trancongminh_week07.services.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class CommentController {
     }
 
     //Hiển thị form sửa bình luận
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/edit/{id}")
     public String editCommentForm(@PathVariable Integer id, Model model) {
         Comment comment = commentService.findById(id)
@@ -34,6 +36,7 @@ public class CommentController {
     }
 
     // 🟡 Cập nhật bình luận
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/edit/{id}")
     public String updateComment(@PathVariable Integer id,
                                 @ModelAttribute Comment updatedComment) {
@@ -42,6 +45,7 @@ public class CommentController {
     }
 
     //Xóa bình luận
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/delete/{id}")
     public String deleteComment(@PathVariable Integer id) {
         Comment comment = commentService.findById(id)
