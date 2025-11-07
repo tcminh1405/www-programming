@@ -1,0 +1,37 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: spring-ai-flight
+
+  ai:
+    google:
+      ai:
+        api-key: ${GEMINI_API_KEY}   # Đọc key từ .env
+    chat:
+      options:
+        model: gemini-2.5-flash
+        temperature: 0.7
+        max-tokens: 1000
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/flightdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop      # Tự tạo & cập nhật bảng theo entity
+    show-sql: true          # Hiển thị câu SQL trên console
+    properties:
+      hibernate:
+        format_sql: true    # In SQL đẹp hơn
+
+  jackson:
+    serialization:
+      indent_output: true   # JSON trả về format đẹp
+
+vaadin:
+  launch-browser: true
